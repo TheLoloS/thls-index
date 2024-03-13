@@ -1,24 +1,25 @@
-W wartości key dodajemy objekt który pobralismy z google.
+In the value of the key, we add the object we retrieved from Google.
 
-Możliwe typy w config.json "add" | "remove"
+Possible types in `config.json`: `"add"` | `"remove"`
 
-wartości w url wygldaja tak:
+The values in the URL look like this:
 
-https://exapmle.com/
+`https://example.com/`
 
-w zależności od typu w config.json, dodajemy lub usuwamy z google linki w urls.txt
+Depending on the type in `config.json`, we add or remove links from Google in `urls.txt`.
 
+If we receive a status `200` and an error-free object, it means it has been added/removed. It looks like this:
 
-jeżeli dostajemy status 200 oraz obiekt bez błedu znacy że się dodało/usunęło wyglada to tak:
-
+```json
 200
 {
-  urlNotificationMetadata: {
-    url: 'https://exapmle.com/',
-    latestUpdate: {
-      url: 'https://exapmle.com/',
-      type: 'URL_UPDATED', tutaj w zalezności od tego co zrobiliśmy jest URL_UPDATED lub URL_DELETED
-      notifyTime: '2024-03-13T19:11:56.107386684Z'
+  "urlNotificationMetadata": {
+    "url": "https://example.com/",
+    "latestUpdate": {
+      "url": "https://example.com/",
+      "type": "URL_UPDATED", // here, depending on what we did, it's either `URL_UPDATED` or `URL_DELETED`
+      "notifyTime": "2024-03-13T19:11:56.107386684Z"
     }
   }
 }
+```
